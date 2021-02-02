@@ -1,0 +1,8 @@
+[2021-01-21 13:53:47.144] [sharedprocess] [info] main {"machineId":"bdcce3d045ca1d0c626b37e4c5969191c7a97f87673a131f94c545c72cd379c0","windowId":2}
+[2021-01-21 13:53:49.400] [sharedprocess] [info] Installing extension: sainnhe.gruvbox-material
+[2021-01-21 13:53:49.975] [sharedprocess] [info] Downloaded extension: sainnhe.gruvbox-material undefined
+[2021-01-21 13:53:50.217] [sharedprocess] [info] Extracted extension to /home/matthewrose/.vscode/extensions/.sainnhe.gruvbox-material-6.3.6: sainnhe.gruvbox-material
+[2021-01-21 13:53:50.218] [sharedprocess] [info] Renamed to /home/matthewrose/.vscode/extensions/sainnhe.gruvbox-material-6.3.6
+[2021-01-21 13:53:50.219] [sharedprocess] [info] Installation completed. sainnhe.gruvbox-material
+[2021-01-21 13:53:50.237] [sharedprocess] [info] Extensions installed successfully: sainnhe.gruvbox-material
+[2021-01-21 13:54:27.162] [sharedprocess] [info] Starting to clean up unused language packs.

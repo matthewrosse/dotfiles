@@ -1,0 +1,8 @@
+[2021-01-30 14:17:30.956] [sharedprocess] [info] main {"machineId":"bdcce3d045ca1d0c626b37e4c5969191c7a97f87673a131f94c545c72cd379c0","windowId":2}
+[2021-01-30 14:17:32.711] [sharedprocess] [info] Installing extension: zhuangtongfa.material-theme
+[2021-01-30 14:17:33.630] [sharedprocess] [info] Downloaded extension: zhuangtongfa.material-theme undefined
+[2021-01-30 14:17:33.728] [sharedprocess] [info] Extracted extension to /home/matthewrose/.vscode/extensions/.zhuangtongfa.material-theme-3.9.13: zhuangtongfa.material-theme
+[2021-01-30 14:17:33.728] [sharedprocess] [info] Renamed to /home/matthewrose/.vscode/extensions/zhuangtongfa.material-theme-3.9.13
+[2021-01-30 14:17:33.729] [sharedprocess] [info] Installation completed. zhuangtongfa.material-theme
+[2021-01-30 14:17:33.742] [sharedprocess] [info] Extensions installed successfully: zhuangtongfa.material-theme
+[2021-01-30 14:18:10.988] [sharedprocess] [info] Starting to clean up unused language packs.

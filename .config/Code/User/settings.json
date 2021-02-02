@@ -1,0 +1,30 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Dracula",
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "'Fira Code'",
+    "editor.wordWrap": "on",
+    "workbench.editor.enablePreview": false,
+    "editor.mouseWheelZoom": true,
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.snippetSuggestions": "bottom",
+    "html-css-class-completion.enableEmmetSupport": true,
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.insertModeKeyBindings": [
+    {
+            "before": ["k", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "window.zoomLevel": 0,
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "telemetry.enableTelemetry": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.cursorSmoothCaretAnimation": true,
+    "workbench.list.smoothScrolling": true
+}
