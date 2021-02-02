@@ -1,0 +1,25 @@
+#!/bin/bash
+
+url="https://www.diki.pl/slownik-angielskiego?q="
+i=0
+#phrase=$(dmenu -p 'Search on diki: ')
+
+for word in "$@"
+do
+  if [[ $i -eq 0 ]]
+  then
+    url="${url}$word"
+  else 
+    url="${url}+$word"
+  fi
+
+  ((i++))
+done
+
+firefox --new-tab $url
+data=$(date "+DATE: %m/%d/%y%tTIME: %H:%M:%S")
+check=$(grep -w "$@" /home/matthewrose/Nauka/english/dictionary | wc -l)
+if [ $check == 0 ]
+then
+  echo "$@    $data" >> /home/matthewrose/Nauka/english/dictionary
+fi

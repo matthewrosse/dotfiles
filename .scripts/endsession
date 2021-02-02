@@ -1,0 +1,25 @@
+#!/bin/bash
+
+declare options=("shutdown
+reboot
+lock")
+
+choice=$(echo -e "${options[@]}" | dmenu -p 'Run: ')
+
+case "$choice" in
+  quit)
+    echo "Program terminated." && exit 1
+  ;;
+  shutdown)
+    shutdown -h now
+  ;;
+  reboot)
+    reboot
+  ;;
+  lock)
+    slock
+  ;;
+  *)
+    exit 1
+  ;;
+esac
