@@ -1,6 +1,5 @@
 alacritty-themes
 arc-x-icons-theme
-autotiling
 gruvbox-material-gtk-theme-git
 gruvbox-material-icon-theme-git
 lazygit

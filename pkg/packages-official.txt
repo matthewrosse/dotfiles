@@ -7,7 +7,6 @@ apache
 arandr
 arc-gtk-theme
 arc-icon-theme
-aspnet-runtime
 autoconf
 automake
 base
@@ -20,9 +19,6 @@ ctags
 cups
 deadbeef
 dosfstools
-dotnet-host
-dotnet-runtime
-dotnet-sdk
 dunst
 efibootmgr
 exa
@@ -48,8 +44,6 @@ gtk3
 gzip
 htop
 i3-gaps
-i3lock
-i3status
 kitty
 libglvnd
 libinput
@@ -91,6 +85,8 @@ phpmyadmin
 pkgconf
 playerctl
 pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
 python-pip
 python-pynvim
 qutebrowser
