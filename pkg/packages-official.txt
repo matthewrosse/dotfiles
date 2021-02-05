@@ -94,6 +94,7 @@ ranger
 ripgrep
 rmlint
 rofi
+s-tui
 scrot
 sed
 sudo
