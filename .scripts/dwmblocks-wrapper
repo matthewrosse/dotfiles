@@ -1,0 +1,15 @@
+#!/bin/sh
+
+flag=0
+while [ $flag -ne 1 ]
+do
+  ping -c 1 -q google.com > /dev/null 2>&1
+  if [ $? -eq 0 ]
+  then
+    kill -43 $(pidof dwmblocks)
+    kill -43 $(pidof dwmblocks)
+    flag=1
+  else
+    sleep 1
+  fi
+done

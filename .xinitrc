@@ -39,16 +39,16 @@ udiskie -f pcmanfm &
 #while true; do
 #	dwm >/dev/null 2>&1
 #done
-session=${1:-dwm}
+#session=${1:-dwm}
+#
+#case $session in
+#    dwm    ) exec dwm;;
+#    bspwm  ) exec bspwm;;
+#    xmonad ) exec xmonad;;
+#    i3     ) exec i3;;
+#    awesome) exec awesome;;
+#    *      ) exec $1;;
+#esac
 
-case $session in
-    dwm    ) exec dwm;;
-    bspwm  ) exec bspwm;;
-    xmonad ) exec xmonad;;
-    i3     ) exec i3;;
-    awesome) exec awesome;;
-    *      ) exec $1;;
-esac
-
-#exec dwm
+exec dwm
 #exec i3
