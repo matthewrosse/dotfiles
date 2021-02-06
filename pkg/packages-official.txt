@@ -100,6 +100,8 @@ sed
 sudo
 texinfo
 tldr
+tor
+torbrowser-launcher
 tree
 ttf-fira-code
 ttf-font-awesome
