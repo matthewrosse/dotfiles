@@ -24,6 +24,7 @@ efibootmgr
 exa
 fakeroot
 fd
+figlet
 file
 findutils
 firefox

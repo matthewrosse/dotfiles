@@ -1,6 +1,7 @@
 alacritty-themes
 ant-dracula-gtk-theme
 arc-x-icons-theme
+brave-bin
 gruvbox-material-gtk-theme-git
 gruvbox-material-icon-theme-git
 libxft-bgra-git
