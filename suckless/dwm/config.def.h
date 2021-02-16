@@ -390,7 +390,7 @@ static const char *dmenucmd[] = {"dmenu_run", "-m",
                                  NULL};
 static const char *termcmd[] = {"st", NULL};
 
-static const char *browsercmd[] = {"firefox", NULL};
+static const char *browsercmd[] = {"$BROWSER", NULL};
 static const char *spotifycmd[] = {"spotify", NULL};
 static const char *shutdowncmd[] = {"/home/matthewrose/.scripts/endsession",
                                     NULL};
