@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 2; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const unsigned int gappih = 20;  /* horiz inner gap between windows */
 static const unsigned int gappiv = 10;  /* vert inner gap between windows */
@@ -10,7 +10,7 @@ static const unsigned int gappoh =
 static const unsigned int gappov =
     30; /* vert outer gap between windows and screen edge */
 static const int smartgaps =
-    0; /* 1 means no outer gap when there is only one window */
+    1; /* 1 means no outer gap when there is only one window */
 static const char autostartblocksh[] = "autostart_blocking.sh";
 static const char autostartsh[] = "autostart.sh";
 static const char dwmdir[] = "dwm";
@@ -84,6 +84,7 @@ static char normHGRDbgcolor[] = "#b96600";
 static char normDWDLbgcolor[] = "#003333";
 static char normSPRLbgcolor[] = "#333300";
 static char normfloatbgcolor[] = "#115577";
+// was #440000
 static char actTTBbgcolor[] = "#440000";
 static char actLTRbgcolor[] = "#440044";
 static char actMONObgcolor[] = "#000044";
