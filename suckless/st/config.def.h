@@ -19,7 +19,7 @@ static char *font2[] = {
  *             0 = no border, 100 = border width is same as cell width */
 int borderperc = 20;
 #else
-static int borderpx = 2;
+static int borderpx = 1;
 #endif // RELATIVEBORDER_PATCH
 
 /*
@@ -123,7 +123,7 @@ unsigned int tabspaces = 8;
 
 #if ALPHA_PATCH
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1.0;
 #endif // ALPHA_PATCH
 
 /* Terminal colors (16 first used in escape sequence) */
