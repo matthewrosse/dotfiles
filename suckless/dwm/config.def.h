@@ -526,7 +526,7 @@ static Key keys[] = {
     {0, XF86XK_AudioMute, spawn, {.v = audiomutecmd}},
     {MODKEY | ShiftMask, XK_e, spawn, {.v = configscmd}},
     {MODKEY, XK_q, spawn, {.v = qutebrowsercmd}},
-
+    {MODKEY | ShiftMask, XK_c, spawn, SHCMD("st -e nvim")},
     {MODKEY, XK_KP_7, moveplace, {.ui = WIN_NW}}, /* XK_KP_Home,  */
     {MODKEY, XK_KP_8, moveplace, {.ui = WIN_N}},  /* XK_KP_Up,    */
     {MODKEY, XK_KP_9, moveplace, {.ui = WIN_NE}}, /* XK_KP_Prior, */
