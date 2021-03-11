@@ -1,0 +1,103 @@
+#=============================================================================
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2020 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "gruvbox"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_iseparator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = false
+
+# My additional config:
+    escape_key_binding = "kj"
+#filetree_direction = "left"
+#filemanager = "nerdtree"
+    terminal_cursor_shape = 1
+    automatic_update = true
+    enable_debug = true
+    enable_vimfiler_welcome = false
+    windows_smartclose = ""
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = "smart"
+auto_completion_tab_key_behavior = "smart"
+auto_complete_method = "coc"
+
+[[layers]]
+name = 'shell'
+default_position = 'top'
+default_height = 30
+
+# Enable format layer
+[[layers]]
+name = "format"
+format_on_save = true
+
+# C/C++
+[[layers]]
+name = "lang#c"
+clang_executable = "/usr/bin/clang"
+clang_flag = ['-I/user/include']
+[layer.clang_std]
+c = "c11"
+cpp = "c++1z"
+objc = "c11"
+objcpp = "c++1z"
+
+[[layers]]
+name = "lang#html"
+
+#[[layers]]
+#name = "lang#javascript"
+
+[[layers]]
+name = "lang#python"
+
+[[layers]]
+name = "lang#json"
+
+[[layers]]
+name = "lang#php"
+
+[[layers]]
+name = "lang#sh"
+
+[[layers]]
+name = "tools"
+
+[[layers]]
+name = "git"
+
+[[layers]]
+name = "github"
+
+[[layers]]
+name = "fzf"
+
+[[layers]]
+name = "debug"
+
+[[layers]]
+name = "colorscheme"
+
+[[layers]]
+name = "edit"
+textobj = "entire"
