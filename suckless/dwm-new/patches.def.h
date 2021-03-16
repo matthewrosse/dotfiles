@@ -500,7 +500,7 @@
  * tasks. This patch takes precedence over the fakefullscreen client patch
  * below. https://dwm.suckless.org/patches/fakefullscreen/
  */
-#define FAKEFULLSCREEN_PATCH 0
+#define FAKEFULLSCREEN_PATCH 1
 
 /* Similarly to the fakefullscreen patch this patch only allows clients to
  * "fullscreen" into the space currently given to them. The "twist" with this
