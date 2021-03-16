@@ -4,6 +4,7 @@ declare options=("alacritty
 zsh
 i3
 neovim
+awesome
 dwm
 dwmblocks
 polybar
@@ -25,6 +26,9 @@ case "$choice" in
   ;;
 zsh)
   choice="$HOME/.zshrc"
+;;
+awesome)
+  choice="$HOME/.config/awesome/rc.lua"
 ;;
 i3)
   choice="$HOME/.config/i3/config"
