@@ -72,7 +72,8 @@ local modkey1      = "Control"
 local browser           = "brave"
 local editor            = "nvim"
 local editorgui         = "kate"
-local filemanager       = "vifmrun"
+local tuifilemanager    = "vifmrun"
+local guifilemanager    = "pcmanfm"
 local mediaplayer       = "vlc"
 local terminal          = "st"
 
@@ -212,7 +213,7 @@ globalkeys = my_table.join(
     -- dmenu
     awful.key({ modkey, "Shift" }, "Return",
     function ()
-        awful.spawn(string.format("dmenu_run",
+        awful.spawn(string.format("dmenu_run -p 'Run: '",
         beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
 	end,
     {description = "show dmenu", group = "hotkeys"}),
@@ -226,7 +227,7 @@ globalkeys = my_table.join(
         {description = "ncpamixer" , group = "terminal apps" }),
     awful.key({ modkey, altkey  }, "f", function () awful.util.spawn( terminal.." -e sh ./.config/vifm/scripts/vifmrun" ) end,
         {description = "vifm" , group = "terminal apps" }),
-    awful.key({ modkey, altkey }, "l", function () awful.util.spawn( terminal.." -e lynx --cfg=~/.lynx/lynx.cfg --lss=~/.lynx/lynx.lss -vikeys gopher://distro.tube" ) end,
+    awful.key({ modkey, altkey }, "l", function () awful.util.spawn( terminal.." -e lynx" ) end,
         {description = "lynx cli browser" , group = "terminal apps" }),
     awful.key({ modkey, altkey }, "w", function () awful.util.spawn( browser ) end,
         {description = "brave browser", group = "gui apps"}),
@@ -234,8 +235,8 @@ globalkeys = my_table.join(
         {description = "nvim", group = "terminal apps"}),
     awful.key({ modkey, altkey }, "o", function () awful.util.spawn( "code" ) end,
         {description = "vscode", group = "gui apps"}),
-    awful.key({ modkey, altkey }, "d", function () awful.util.spawn( "dolphin" ) end,
-        {description = "dolphin", group = "gui apps"}),
+    awful.key({ modkey, altkey }, "d", function () awful.util.spawn( guifilemanager ) end,
+        {description = guifilemanager, group = "gui apps"}),
     awful.key({ modkey, altkey }, "t", function () awful.util.spawn( "teams" ) end,
         {description = "teams", group = "gui apps"}),
     awful.key({ modkey, altkey }, "q", function () awful.util.spawn( "qutebrowser" ) end,

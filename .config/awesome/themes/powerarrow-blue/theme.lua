@@ -16,8 +16,8 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-blue"
 --theme.wallpaper                                 = theme.dir .. "/starwars.jpg"
-theme.font                                      = "Mononoki Nerd Font 9"
-theme.taglist_font                              = "Droid Sans Bold 7"
+theme.font                                      = "Mononoki Nerd Font 11"
+theme.taglist_font                              = "Droid Sans Bold 8"
 theme.fg_normal                                 = "#ffffff"
 theme.fg_focus                                  = "#A77AC4"
 theme.fg_urgent                                 = "#b74822"
@@ -238,7 +238,7 @@ Copy/paste the city code in the URL to this file in city_id
 --]]
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
-    city_id = 2803138, -- placeholder (Belgium)
+    city_id = 3083271, -- placeholder (Belgium)
     notification_preset = { font = "Mononoki Nerd Font 11", fg = theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#ffffff", "N/A "),
     settings = function()
