@@ -69,7 +69,7 @@ local altkey       = "Mod1"
 local modkey1      = "Control"
 
 -- personal variables
-local browser           = "brave"
+local browser           = "firefox"
 local editor            = "nvim"
 local editorgui         = "kate"
 local tuifilemanager    = "vifmrun"
@@ -230,7 +230,7 @@ globalkeys = my_table.join(
     awful.key({ modkey, altkey }, "l", function () awful.util.spawn( terminal.." -e lynx" ) end,
         {description = "lynx cli browser" , group = "terminal apps" }),
     awful.key({ modkey, altkey }, "w", function () awful.util.spawn( browser ) end,
-        {description = "brave browser", group = "gui apps"}),
+        {description = browser, group = "gui apps"}),
     awful.key({ modkey, altkey }, "p", function () awful.util.spawn( terminal.." -e nvim" ) end,
         {description = "nvim", group = "terminal apps"}),
     awful.key({ modkey, altkey }, "o", function () awful.util.spawn( "code" ) end,
@@ -243,6 +243,8 @@ globalkeys = my_table.join(
         {description = "qutebrowser", group = "gui apps"}),
     awful.key({ modkey, altkey }, "s", function () awful.util.spawn( "spotify" ) end,
         {description = "spotify", group = "gui apps"}),
+    awful.key({ modkey, altkey }, "m", function () awful.util.spawn( "zathura ~/Learning/MATECH/lista_0.pdf" ) end,
+        {description = "lista matech", group = "studia"}),
 
     -- screenshots
     awful.key({ }, "Print", function () awful.util.spawn("scrot 'ArcoLinuxD-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'") end,
