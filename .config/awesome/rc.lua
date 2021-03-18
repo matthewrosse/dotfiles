@@ -290,13 +290,13 @@ globalkeys = my_table.join(
              -- {description = "view  previous nonempty", group = "tag"}),
 
     -- Default client focus
-    awful.key({ altkey,           }, "j",
+    awful.key({ altkey,           }, "u",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ altkey,           }, "k",
+    awful.key({ altkey,           }, "i",
         function ()
             awful.client.focus.byidx(-1)
         end,
