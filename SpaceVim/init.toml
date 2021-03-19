@@ -36,13 +36,13 @@
 
 # Enable autocomplete layer
 [[layers]]
-name = 'autocomplete'
+name = "autocomplete"
 auto_completion_return_key_behavior = "smart"
 auto_completion_tab_key_behavior = "smart"
-auto_complete_method = "coc"
+#autocomplete_method = "coc"
 
 [[layers]]
-name = 'shell'
+name = "shell"
 default_position = 'top'
 default_height = 30
 
@@ -55,6 +55,7 @@ format_on_save = true
 [[layers]]
 name = "lang#c"
 clang_executable = "/usr/bin/clang"
+#enable_clang_syntax_highlight = true
 clang_flag = ['-I/user/include']
 [layer.clang_std]
 c = "c11"

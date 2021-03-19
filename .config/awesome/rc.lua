@@ -245,6 +245,8 @@ globalkeys = my_table.join(
         {description = "spotify", group = "gui apps"}),
     awful.key({ modkey, altkey }, "m", function () awful.util.spawn( "zathura ~/Learning/MATECH/lista_0.pdf" ) end,
         {description = "lista matech", group = "studia"}),
+    awful.key({ modkey, altkey }, "h", function () awful.util.spawn( "/home/matthewrose/.scripts/mansplain" ) end,
+        {description = "mansplain", group = "terminal apps"}),
 
     -- screenshots
     awful.key({ }, "Print", function () awful.util.spawn("scrot 'ArcoLinuxD-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'") end,
@@ -822,4 +824,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("picom --config $HOME/.config/picom/picom.conf")
 awful.spawn.with_shell("pgrep 'volumeicon' && killall volumeicon; volumeicon")
-awful.spawn.with_shell("xset r rate 200 30")
+awful.spawn.with_shell("xset r rate 250 40")
