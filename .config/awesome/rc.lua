@@ -247,9 +247,11 @@ globalkeys = my_table.join(
         {description = "lista matech", group = "studia"}),
     awful.key({ modkey, altkey }, "h", function () awful.util.spawn( "/home/matthewrose/.scripts/mansplain" ) end,
         {description = "mansplain", group = "terminal apps"}),
+    awful.key({ modkey, altkey }, "e", function () awful.util.spawn( "emacs" ) end,
+        {description = "emacs", group = "gui apps"}),
 
     -- screenshots
-    awful.key({ }, "Print", function () awful.util.spawn("scrot 'ArcoLinuxD-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'") end,
+    awful.key({ }, "Print", function () awful.util.spawn("scrot 'ManjaroLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'") end,
         {description = "Scrot", group = "screenshots"}),
     awful.key({ modkey1           }, "Print", function () awful.util.spawn( "xfce4-screenshooter" ) end,
         {description = "Xfce screenshot", group = "screenshots"}),
@@ -822,6 +824,6 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("picom --config $HOME/.config/picom/picom.conf")
+awful.spawn.with_shell("picom --experimental-backends --config $HOME/.config/picom/picom.conf")
 awful.spawn.with_shell("pgrep 'volumeicon' && killall volumeicon; volumeicon")
 awful.spawn.with_shell("xset r rate 250 40")

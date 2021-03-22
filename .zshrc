@@ -78,6 +78,7 @@ alias g++='g++ -std=c++17'
 alias dwmdir='cd ~/Apps/dwm-flexipatch'
 alias makedwm='cd ~/Apps/dwm-flexipatch && sudo make clean install;cd -'
 
+export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts/statusbar
 export PATH=$PATH:$HOME/.config/vifm/scripts
