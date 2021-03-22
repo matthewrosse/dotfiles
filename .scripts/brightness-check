@@ -1,0 +1,2 @@
+#!/bin/bash
+[[ $(xbacklight | cut -d'.' -f 1) -lt 100 ]] && notify-send "Brightness is less than 100%!" || echo "Brightness is at 100%." > /dev/null 2>&1
