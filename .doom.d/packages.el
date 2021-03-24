@@ -49,9 +49,12 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! flycheck-aspell)
+(package! async)
 (package! evil-tutor)
 (package! key-chord)
 (package! dired-open)
 (package! peep-dired)
 (package! resize-window)
+(package! org-bullets)
+(package! rainbow-mode)
+(package! quickrun)
