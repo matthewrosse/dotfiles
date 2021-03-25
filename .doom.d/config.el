@@ -1,96 +1,7 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "Mateusz Różański"
-      user-mail-address "rozanski.mateusz00@gmail.com")
-
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
-      doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
-(after! doom-themes
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t))
-(custom-set-faces!
-  '(font-lock-comment-face :slant italic)
-  '(font-lock-keyword-face :slant italic))
-
-;; Here are some additional functions/macros that could help you configure Doom:
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
-
-;; MAPPING KJ TO ESC
-
-(require 'key-chord)
-(key-chord-mode t)
-(key-chord-define-global "kj" 'evil-normal-state)
-(key-chord-define-global "KJ" 'evil-normal-state)
-
-;;NEOTREE
-
-(after! neotree
-  (setq neo-smart-open t
-        neo-window-fixed-size nil))
-(after! doom-themes
-  (setq doom-neotree-enable-variable-pitch t))
 (map! :leader
-      :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
-      :desc "Open directory in neotree" "d n" #'neotree-dir)
-
-;; EWW
-
-(setq browse-url-browser-function 'eww-browse-url)
-(map! :leader
-      :desc "Search web for text between BEG/END"
-      "s w" #'eww-search-words
-      (:prefix ("e" . "evaluate/EWW")
-       :desc "Eww web browser" "w" #'eww
-       :desc "Eww reload page" "R" #'eww-reload))
-
-;; DIRED
+      (:prefix ("b". "buffer")
+        :desc "List bookmarks" "L" #'list-bookmarks
+        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 
 (map! :leader
       (:prefix ("d" . "dired")
@@ -119,14 +30,76 @@
                               ("mkv" . "mpv")
                               ("mp4" . "mpv")))
 
-;; BOOKMARKS AND BUFFERS
-
+(setq doom-theme 'doom-one)
 (map! :leader
-      (:prefix ("b". "buffer")
-        :desc "List bookmarks" "L" #'list-bookmarks
-        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
+      :desc "Load new theme" "h t" #'counsel-load-theme)
 
-;; SPLITS
+(setq browse-url-browser-function 'eww-browse-url)
+(map! :leader
+      :desc "Search web for text between BEG/END"
+      "s w" #'eww-search-words
+      (:prefix ("e" . "evaluate/EWW")
+       :desc "Eww web browser" "w" #'eww
+       :desc "Eww reload page" "R" #'eww-reload))
+
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 15)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+      doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+
+(setq display-line-numbers-type t)
+(map! :leader
+      :desc "Comment or uncomment lines" "TAB TAB" #'comment-line
+      (:prefix ("t" . "toggle")
+       :desc "Toggle line numbers" "l" #'doom/toggle-line-numbers
+       :desc "Toggle line highlight in frame" "h" #'hl-line-mode
+       :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
+       :desc "Toggle truncate lines" "t" #'toggle-truncate-lines))
+
+(setq user-full-name "Mateusz Różański"
+      user-mail-address "rozanski.mateusz00@gmail.com")
+
+(require 'key-chord)
+(key-chord-mode t)
+(key-chord-define-global "kj" 'evil-normal-state)
+(key-chord-define-global "KJ" 'evil-normal-state)
+
+(after! neotree
+  (setq neo-smart-open t
+        neo-window-fixed-size nil))
+(after! doom-themes
+  (setq doom-neotree-enable-variable-pitch t))
+(map! :leader
+      :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
+      :desc "Open directory in neotree" "d n" #'neotree-dir)
+
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-directory "~/Org/")
+
+(defun dt/org-babel-tangle-async (file)
+  "Invoke `org-babel-tangle-file' asynchronously."
+  (message "Tangling %s..." (buffer-file-name))
+  (async-start
+   (let ((args (list file)))
+  `(lambda ()
+        (require 'org)
+        ;;(load "~/.emacs.d/init.el")
+        (let ((start-time (current-time)))
+          (apply #'org-babel-tangle-file ',args)
+          (format "%.2f" (float-time (time-since start-time))))))
+   (let ((message-string (format "Tangling %S completed after " file)))
+     `(lambda (tangle-time)
+        (message (concat ,message-string
+                         (format "%s seconds" tangle-time)))))))
+
+(defun dt/org-babel-tangle-current-buffer-async ()
+  "Tangle current buffer asynchronously."
+  (dt/org-babel-tangle-async (buffer-file-name)))
 
 (defun prefer-horizontal-split ()
   (set-variable 'split-height-threshold nil t)
@@ -134,3 +107,36 @@
 (add-hook 'markdown-mode-hook 'prefer-horizontal-split)
 (map! :leader
       :desc "Clone indirect buffer other window" "b c" #'clone-indirect-buffer-other-window)
+
+(map! :leader
+      (:prefix ("r" . "registers")
+       :desc "Copy to register" "c" #'copy-to-register
+       :desc "Frameset to register" "f" #'frameset-to-register
+       :desc "Insert contents of register" "i" #'insert-register
+       :desc "Jump to register" "j" #'jump-to-register
+       :desc "List registers" "l" #'list-registers
+       :desc "Number to register" "n" #'number-to-register
+       :desc "Interactively choose a register" "r" #'counsel-register
+       :desc "View a register" "v" #'view-register
+       :desc "Window configuration to register" "w" #'window-configuration-to-register
+       :desc "Increment register" "+" #'increment-register
+       :desc "Point to register" "SPC" #'point-to-register))
+
+(map! :leader
+      :desc "Quickrun" "r q" #'quickrun
+      :desc "Quickrun in shell" "r s" #'quickrun-shell)
+
+(quickrun-add-command "c++/c1z"
+  '((:command . "g++")
+    (:exec    . ("%c -std=c++1z %o -o %e %s" "%e %a"))
+    (:remove  . ("%e")))
+  :default "c++")
+
+(quickrun-add-command "pod"
+  '((:command . "perldoc")
+    (:exec    . "%c -T -F %s"))
+  :mode 'pod-mode)
+
+(quickrun-add-command "c/gcc"
+  '((:exec . ("%c -std=c11 %o -o %e %s" "%e %a")))
+  :override t)
