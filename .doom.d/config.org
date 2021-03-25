@@ -5,6 +5,7 @@
 
 * TABLE OF CONTENTS :toc:
 - [[#bookmarks-and-buffers][BOOKMARKS AND BUFFERS]]
+- [[#dependencies][DEPENDENCIES]]
 - [[#dired][DIRED]]
 - [[#doom-theme][DOOM THEME]]
 - [[#eww][EWW]]
@@ -29,6 +30,19 @@ Doom Emacs uses 'SPC b' for keybindings related to bookmarks and buffers.  Bookm
         :desc "List bookmarks" "L" #'list-bookmarks
         :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 #+END_SRC
+* TODO DEPENDENCIES
++ clang
++ fzf
++ fd
++ jedi-language-server
++ js-beautify
++ mpv
++ python-black
++ python-pipenv
++ python-pyflakes
++ sxiv
++ Mononoki Nerd Font
++ Ubuntu Family Fonts
 
 * DIRED
 Dired is the file manager within Emacs. Below, I setup keybindings for image previews (peep-dired). Doom Emacs does not use 'SPC d' for any of its keybindings, so I have chosen the format of 'SPC d' plus 'key'.
@@ -103,8 +117,8 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance, like ‘for’ and ‘if’ in C.
 
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 19)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 19)
       doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
@@ -150,6 +164,8 @@ Mapping KJ to ESC
 (key-chord-mode t)
 (key-chord-define-global "kj" 'evil-normal-state)
 (key-chord-define-global "KJ" 'evil-normal-state)
+(map! :leader
+      :desc "Open vterm" "o s" #'vterm)
 #+END_SRC
 * NEOTREE
 Neotree is a file tree viewer.  When you open neotree, it jumps to the current file thanks to neo-smart-open.  The neo-window-fixed-size setting makes the neotree width be adjustable.  Doom Emacs had no keybindings set for neotree.  Since Doom Emacs uses 'SPC t' for 'toggle' keybindings, I used 'SPC t n' for toggle-neotree.
@@ -175,32 +191,12 @@ Neotree is a file tree viewer.  When you open neotree, it jumps to the current f
 Settings for org-mode.
 
 #+BEGIN_SRC emacs-lisp
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(setq org-directory "~/Org/")
-#+END_SRC
-
-I was tired of having to run org-babel-tangle after saving my literate dotfiles.  So the following function runs org-babel-tangle upon saving any org-mode buffer.  This is asynchronous meaning that it dispatches the tangle function to a subprocess, so that the main Emacs is not blocked while it runs.
-
-#+BEGIN_SRC emacs-lisp
-(defun dt/org-babel-tangle-async (file)
-  "Invoke `org-babel-tangle-file' asynchronously."
-  (message "Tangling %s..." (buffer-file-name))
-  (async-start
-   (let ((args (list file)))
-  `(lambda ()
-        (require 'org)
-        ;;(load "~/.emacs.d/init.el")
-        (let ((start-time (current-time)))
-          (apply #'org-babel-tangle-file ',args)
-          (format "%.2f" (float-time (time-since start-time))))))
-   (let ((message-string (format "Tangling %S completed after " file)))
-     `(lambda (tangle-time)
-        (message (concat ,message-string
-                         (format "%s seconds" tangle-time)))))))
-
-(defun dt/org-babel-tangle-current-buffer-async ()
-  "Tangle current buffer asynchronously."
-  (dt/org-babel-tangle-async (buffer-file-name)))
+(after! org
+  (setq org-directory "~/Org/")
+  (setq org-agenda-files '("~/Org/agenda.org"))
+  (require 'org-bullets)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
 #+END_SRC
 
 * SPLITS

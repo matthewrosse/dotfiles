@@ -243,7 +243,7 @@ globalkeys = my_table.join(
         {description = "qutebrowser", group = "gui apps"}),
     awful.key({ modkey, altkey }, "s", function () awful.util.spawn( "spotify" ) end,
         {description = "spotify", group = "gui apps"}),
-    awful.key({ modkey, altkey }, "m", function () awful.util.spawn( "zathura ~/Learning/MATECH/lista_0.pdf" ) end,
+    awful.key({ modkey, altkey }, "m", function () awful.util.spawn( "zathura ~/Learning/MATECH/lista_1.pdf" ) end,
         {description = "lista matech", group = "studia"}),
     awful.key({ modkey, altkey }, "h", function () awful.util.spawn( "/home/matthewrose/.scripts/mansplain" ) end,
         {description = "mansplain", group = "terminal apps"}),
