@@ -42,8 +42,8 @@
        :desc "Eww web browser" "w" #'eww
        :desc "Eww reload page" "R" #'eww-reload))
 
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 19)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 19)
       doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
@@ -68,6 +68,8 @@
 (key-chord-mode t)
 (key-chord-define-global "kj" 'evil-normal-state)
 (key-chord-define-global "KJ" 'evil-normal-state)
+(map! :leader
+      :desc "Open vterm" "o s" #'vterm)
 
 (after! neotree
   (setq neo-smart-open t
@@ -78,28 +80,12 @@
       :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
       :desc "Open directory in neotree" "d n" #'neotree-dir)
 
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(setq org-directory "~/Org/")
-
-(defun dt/org-babel-tangle-async (file)
-  "Invoke `org-babel-tangle-file' asynchronously."
-  (message "Tangling %s..." (buffer-file-name))
-  (async-start
-   (let ((args (list file)))
-  `(lambda ()
-        (require 'org)
-        ;;(load "~/.emacs.d/init.el")
-        (let ((start-time (current-time)))
-          (apply #'org-babel-tangle-file ',args)
-          (format "%.2f" (float-time (time-since start-time))))))
-   (let ((message-string (format "Tangling %S completed after " file)))
-     `(lambda (tangle-time)
-        (message (concat ,message-string
-                         (format "%s seconds" tangle-time)))))))
-
-(defun dt/org-babel-tangle-current-buffer-async ()
-  "Tangle current buffer asynchronously."
-  (dt/org-babel-tangle-async (buffer-file-name)))
+(after! org
+  (setq org-directory "~/Org/")
+  (setq org-agenda-files '("~/Org/agenda.org"))
+  (require 'org-bullets)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
 
 (defun prefer-horizontal-split ()
   (set-variable 'split-height-threshold nil t)
