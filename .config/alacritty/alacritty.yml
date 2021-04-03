@@ -486,23 +486,23 @@ key_bindings:
   - { key: Insert, mods: Shift, action: PasteSelection }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: K, mods: Control, action: IncreaseFontSize }
+  - { key: K, mods: Control|Shift, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: J, mods: Control, action: DecreaseFontSize }
+  - { key: J, mods: Control|Shift, action: DecreaseFontSize }
 
   - { key: Paste, action: Paste }
   - { key: Copy, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, chars: "\f" }
   - {
-      key: PageUp,
-      mods: Shift,
+      key: K,
+      mods: Control,
       action: ScrollPageUp,
       mode: ~Alt
     }
   - {
-      key: PageDown,
-      mods: Shift,
+      key: J,
+      mods: Control,
       action: ScrollPageDown,
       mode: ~Alt
     }

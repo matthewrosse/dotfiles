@@ -75,7 +75,7 @@ local editorgui         = "kate"
 local tuifilemanager    = "vifmrun"
 local guifilemanager    = "pcmanfm"
 local mediaplayer       = "vlc"
-local terminal          = "st"
+local terminal          = "alacritty"
 
 -- awesome variables
 awful.util.terminal = terminal
