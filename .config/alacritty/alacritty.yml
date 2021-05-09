@@ -99,8 +99,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Mononoki Nerd Font
-    #family: Fira Code Nerd Font
+    #family: Mononoki Nerd Font
+    family: Fira Code Nerd Font
     # family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
@@ -204,31 +204,31 @@ colors:
   # Default colors
   primary:
     # hard contrast: background = '#1d2021'
-    background: '#282828'
+    background: "#282828"
     # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
+    foreground: "#ebdbb2"
 
   # Normal colors
   normal:
-    black: '#282828'
-    red: '#cc241d'
-    green: '#98971a'
-    yellow: '#d79921'
-    blue: '#458588'
-    magenta: '#b16286'
-    cyan: '#689d6a'
-    white: '#a89984'
+    black: "#282828"
+    red: "#cc241d"
+    green: "#98971a"
+    yellow: "#d79921"
+    blue: "#458588"
+    magenta: "#b16286"
+    cyan: "#689d6a"
+    white: "#a89984"
 
   # Bright colors
   bright:
-    black: '#928374'
-    red: '#fb4934'
-    green: '#b8bb26'
-    yellow: '#fabd2f'
-    blue: '#83a598'
-    magenta: '#d3869b'
-    cyan: '#8ec07c'
-    white: '#ebdbb2'
+    black: "#928374"
+    red: "#fb4934"
+    green: "#b8bb26"
+    yellow: "#fabd2f"
+    blue: "#83a598"
+    magenta: "#d3869b"
+    cyan: "#8ec07c"
+    white: "#ebdbb2"
 
 # Visual Bell
 #
@@ -494,27 +494,7 @@ key_bindings:
   - { key: Copy, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, chars: "\f" }
-  - {
-      key: K,
-      mods: Control,
-      action: ScrollPageUp,
-      mode: ~Alt
-    }
-  - {
-      key: J,
-      mods: Control,
-      action: ScrollPageDown,
-      mode: ~Alt
-    }
-  - {
-      key: Home,
-      mods: Shift,
-      action: ScrollToTop,
-      mode: ~Alt
-    }
-  - {
-      key: End,
-      mods: Shift,
-      action: ScrollToBottom,
-      mode: ~Alt
-    }
+  - { key: K, mods: Control, action: ScrollPageUp, mode: ~Alt }
+  - { key: J, mods: Control, action: ScrollPageDown, mode: ~Alt }
+  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
+  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
