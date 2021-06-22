@@ -42,9 +42,9 @@
        :desc "Eww web browser" "w" #'eww
        :desc "Eww reload page" "R" #'eww-reload))
 
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 19)
+(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 19)
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 19)
-      doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
+      doom-big-font (font-spec :family "Fira Code Nerd Font" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -52,7 +52,7 @@
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
 
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 (map! :leader
       :desc "Comment or uncomment lines" "TAB TAB" #'comment-line
       (:prefix ("t" . "toggle")

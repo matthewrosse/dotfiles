@@ -82,6 +82,9 @@ name = "lang#php"
 name = "lang#sh"
 
 [[layers]]
+name= "lang#latex"
+
+[[layers]]
 name = "tools"
 
 [[layers]]
