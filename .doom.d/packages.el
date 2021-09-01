@@ -58,3 +58,4 @@
 (package! org-bullets)
 (package! rainbow-mode)
 (package! quickrun)
+(package! latex-preview-pane)

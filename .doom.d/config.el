@@ -43,8 +43,8 @@
        :desc "Eww reload page" "R" #'eww-reload))
 
 (setq doom-font (font-spec :family "Fira Code Nerd Font" :size 19)
+      --doom-big-font (font-spec :family "Fira Code Nerd Font" :size 21))
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 19)
-      doom-big-font (font-spec :family "Fira Code Nerd Font" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -126,3 +126,5 @@
 (quickrun-add-command "c/gcc"
   '((:exec . ("%c -std=c11 %o -o %e %s" "%e %a")))
   :override t)
+
+(setq +latex-viewers '(okular))

@@ -106,6 +106,7 @@ alias g++='g++ -std=c++17'
 # suckless
 alias dwmdir='cd ~/Apps/dwm-flexipatch'
 alias makedwm='cd ~/Apps/dwm-flexipatch && sudo make clean install;cd -'
+alias co='cd ~/Programming/Projects && make && ./callisto'
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH=$PATH:$HOME/.scripts

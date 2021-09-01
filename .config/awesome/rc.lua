@@ -211,12 +211,13 @@ globalkeys = my_table.join(
 
     -- {{{ Personal keybindings
     -- dmenu
-    awful.key({ modkey, "Shift" }, "Return",
+    awful.key({ modkey }, "p",
     function ()
-        awful.spawn(string.format("dmenu_run -p 'Run: '",
-        beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
+        --awful.spawn(string.format("dmenu_run -p 'Run: '",
+        --beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
+        awful.spawn(string.format("rofi -show drun"))
 	end,
-    {description = "show dmenu", group = "hotkeys"}),
+    {description = "show rofi", group = "hotkeys"}),
 
     -- My dmenu scripts (Alt+Ctrl+Key)
     awful.key({ altkey, "Control" }, "e", function () awful.util.spawn( "/home/matthewrose/.scripts/dmconf" ) end,
