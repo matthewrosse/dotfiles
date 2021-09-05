@@ -1,4 +1,6 @@
-#! /bin/bash 
-picom --config $HOME/.config/picom/picom.conf &
+#!/bin/sh
+lxsession &
 nitrogen --restore &
-xset r rate 200 30 
+picom &
+volumeicon &
+nm-applet &
