@@ -262,9 +262,17 @@ def init_widgets_list():
         #    background = colors[1],
         #    margin = 3
         #),
-        widget.Image(filename="~/.config/qtile/python.png",
-                     background=colors[1],
-                     margin=3),
+        widget.Image(
+            filename="~/.config/qtile/python.png",
+            background=colors[1],
+            margin=3,
+            mouse_callbacks={
+                'Button1':
+                lambda: subprocess.run('sleep 3 && shutdown now', shell=True),
+                'Button3':
+                lambda: subprocess.run('sleep 3 && reboot', shell=True)
+            },
+        ),
         widget.GroupBox(font="Iosevka Nerd Font",
                         fontsize=15,
                         foreground=colors[2],
