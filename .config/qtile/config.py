@@ -30,12 +30,12 @@ import subprocess
 from typing import List  # noqa: F401
 
 from libqtile import bar, hook, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "alacritty"
+browser = "brave"
 
 keys = [
     # Switch between windows
@@ -132,12 +132,20 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 1")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 1")),
     Key([mod, "shift"], "a", lazy.spawn("pavucontrol")),
-    Key([mod], "w", lazy.spawn("firefox")),
+    Key([mod], "w", lazy.spawn(browser)),
 
     ### Switch focus of monitors
     Key([mod], "period", lazy.next_screen(),
         desc='Move focus to next monitor'),
-    Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor')
+    Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor'),
+
+    ### Apps
+    Key([mod], "e", lazy.spawn("emacs"), desc="Emacs"),
+    Key([mod],
+        "c",
+        lazy.spawn(terminal +
+                   " -e nvim /home/matthewrose/.config/qtile/config.py"),
+        desc="Config file")
 ]
 
 
