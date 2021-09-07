@@ -145,7 +145,13 @@ keys = [
         "c",
         lazy.spawn(terminal +
                    " -e nvim /home/matthewrose/.config/qtile/config.py"),
-        desc="Config file")
+        desc="Config file"),
+    Key([mod],
+        "y",
+        lazy.spawn(
+            "alacritty -e /home/matthewrose/.config/vifm/scripts/vifmrun"),
+        desc="Vifm"),
+    Key([mod, "shift"], "l", lazy.spawn("slock"), desc="Lock the screen")
 ]
 
 
@@ -421,7 +427,7 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
@@ -433,6 +439,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
+    Match(wm_class='pinentry-gtk-2'),
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
