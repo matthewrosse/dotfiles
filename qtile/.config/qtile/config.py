@@ -129,8 +129,8 @@ keys = [
         lazy.spawn("rofi -show drun"),
         desc="Spawn a command using a prompt widget"),
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 1")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 1")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 5")),
     Key([mod, "shift"], "a", lazy.spawn("pavucontrol")),
     Key([mod], "w", lazy.spawn(browser)),
 
