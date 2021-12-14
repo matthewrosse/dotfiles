@@ -114,7 +114,7 @@
 
 (quickrun-add-command "c++/c1z"
   '((:command . "g++")
-    (:exec    . ("%c -std=c++1z %o -o %e %s" "%e %a"))
+    (:exec    . ("%c -std=c++2a %o -o %e %s" "%e %a"))
     (:remove  . ("%e")))
   :default "c++")
 

@@ -1,20 +1,34 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+### EXPORT
+export TERM="xterm-256color"                      # getting proper colors
+#export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
-# Use powerline
-USE_POWERLINE="true"
-# Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
-# Use manjaro zsh prompt
-#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-#fi
+setopt correct                                                  # Auto correct mistakes
+setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+setopt nocaseglob                                               # Case insensitive globbing
+setopt rcexpandparam                                            # Array expension with parameters
+setopt nocheckjobs                                              # Don't warn about running processes when exiting
+setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+setopt nobeep                                                   # No beep
+setopt appendhistory                                            # Immediately append history instead of overwriting
+setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt autocd                                                   # if only directory path is entered, cd there.
+setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
+setopt histignorespace                                          # Don't save commands that start with space
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+# Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+HISTFILE=~/.zhistory
+HISTSIZE=10000
+SAVEHIST=10000
+#export EDITOR=/usr/bin/nano
+#export VISUAL=/usr/bin/nano
+WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
+
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -81,15 +95,6 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-# pacman and yay
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-
-# get fastest mirrors
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -101,23 +106,19 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # c++17 standard
-alias g++='g++ -std=c++17'
-
-# suckless
-alias dwmdir='cd ~/Apps/dwm-flexipatch'
-alias makedwm='cd ~/Apps/dwm-flexipatch && sudo make clean install;cd -'
-alias co='cd ~/Programming/Projects && make && ./callisto'
+alias g++='g++ -std=c++20 -Wall -Weffc++ -Wextra -Wsign-conversion'
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
-export PATH=$PATH:$HOME/.scripts
-export PATH=$PATH:$HOME/.scripts/statusbar
 export PATH=$PATH:$HOME/.config/vifm/scripts
 export TERMINAL="alacritty"
+export PATH="$HOME/.nvm/versions/node/v17.0.1/bin:$PATH"
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(starship init zsh)"
