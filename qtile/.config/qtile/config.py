@@ -271,11 +271,6 @@ def init_widgets_list():
 
         # Left Side of the bar
 
-        #widget.Image(
-        #    filename = "/usr/share/pixmaps/archlinux-logo.png",
-        #    background = colors[1],
-        #    margin = 3
-        #),
         widget.Image(
             filename="~/.config/qtile/python.png",
             background=colors[1],
@@ -347,6 +342,16 @@ def init_widgets_list():
         # Left Side of the bar
         widget.Spacer(length=bar.STRETCH, background=colors[1]),
         widget.Systray(background=colors[1]),
+        widget.Spacer(length=10, background=colors[1]),
+        widget.TextBox(font="Iosevka Nerd Font",
+                       fontsize=15,
+                       text=" ",
+                       foreground=colors[7],
+                       background=colors[1]),
+        widget.PulseVolume(
+            background=colors[1],
+            foreground=colors[2]
+        ),
         widget.Spacer(length=10, background=colors[1]),
         widget.TextBox(font="Iosevka Nerd Font",
                        fontsize=18,
