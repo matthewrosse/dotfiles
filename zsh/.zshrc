@@ -88,6 +88,16 @@ ex ()
   fi
 }
 
+# git
+
+alias g='git'
+alias ga='git add'
+alias gci='git commit'
+alias gp='git push'
+alias gs='git status'
+alias gb='git branch'
+alias gco='git checkout'
+
 # navigation
 alias ..='cd ..' 
 alias ...='cd ../..'
@@ -111,17 +121,14 @@ alias g++='g++ -std=c++20 -Wall -Weffc++ -Wextra -Wsign-conversion'
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH=$PATH:$HOME/.config/vifm/scripts
 export TERMINAL="alacritty"
-export PATH="$HOME/.nvm/versions/node/v17.0.1/bin:$PATH"
+#export PATH="$HOME/.nvm/versions/node/v17.0.1/bin:$PATH"
 
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+
+export PATH=~/.npm-global/bin:$PATH
 
 eval "$(starship init zsh)"
 
-export PATH=~/.nvm/versions/node/v16.13.1/bin:$PATH
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

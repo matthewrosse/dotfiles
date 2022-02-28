@@ -1,12 +1,3 @@
-#  ____ _____
-# |  _ \_   _|  Derek Taylor (DistroTube)
-# | | | || |    http://www.youtube.com/c/DistroTube
-# | |_| || |    http://www.gitlab.com/dwt1/
-# |____/ |_|
-#
-# My bash config. Not much to see here; just some pretty standard stuff.
-
-### EXPORT
 export TERM="xterm-256color"                      # getting proper colors
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 export ALTERNATE_EDITOR=""                        # setting for emacsclient
@@ -100,11 +91,6 @@ ex ()
   fi
 }
 
-### ALIASES ###
-
-# root privileges
-alias doas="doas --"
-
 # navigation
 up () {
   local d=""
@@ -127,13 +113,6 @@ up () {
 
 # vim and emacs
 alias vim="nvim"
-
-# bat
-# alias cat='bat'
-
-# broot
-#alias br='broot -dhp'
-#alias bs='broot --sizes'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -171,7 +150,7 @@ alias rm='rm -i'
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-alias vifm='./.config/vifm/scripts/vifmrun'
+#alias vifm='./.config/vifm/scripts/vifmrun'
 #alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
 #alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
 
@@ -258,6 +237,8 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
+
+export PATH=~/.npm-global/bin:$PATH
 
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
