@@ -18,9 +18,9 @@ export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
 
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
-set -o vi
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
+# set -o vi
+# bind -m vi-command 'Control-l: clear-screen'
+# bind -m vi-insert 'Control-l: clear-screen'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -129,6 +129,10 @@ alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
 alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
 #alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 #alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
+
+# apt update
+
+alias aptupdate='sudo apt update && sudo apt upgrade'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -240,6 +244,18 @@ fi
 
 export PATH=~/.npm-global/bin:$PATH
 
+export PATH=$PATH:/usr/local/go/bin
+
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
 
+. "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/matthewrosse/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
