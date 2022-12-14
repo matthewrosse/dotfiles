@@ -20,6 +20,7 @@ null_ls.setup({
 		formatting.rustfmt,
 		formatting.clang_format,
 		formatting.black,
+		formatting.isort,
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		diagnostics.eslint_d.with({ -- js/ts linter
