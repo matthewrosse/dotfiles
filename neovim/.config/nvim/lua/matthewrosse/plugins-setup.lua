@@ -27,6 +27,7 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } })
+	use("nvim-telescope/telescope-file-browser.nvim")
 
 	use({
 		"windwp/nvim-autopairs",
@@ -78,6 +79,10 @@ return require("packer").startup(function(use)
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
 	use("glepnir/dashboard-nvim")
+
+	use("folke/zen-mode.nvim")
+
+	use("ThePrimeagen/harpoon")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
