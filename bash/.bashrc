@@ -221,6 +221,8 @@ alias tb="nc termbin.com 9999"
 # the terminal rickroll
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
+alias nvcfg="cd $HOME/.config/nvim/"
+
 # Unlock LBRY tips
 #alias tips='lbrynet txo spend --type=support --is_not_my_input --blocking'
 
