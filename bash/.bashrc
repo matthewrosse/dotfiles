@@ -173,18 +173,25 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias merge='xrdb -merge ~/.Xresources'
 
 # git
-alias addup='git add -u'
-alias addall='git add .'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias stat='git status'  # 'status' is protected name so using 'stat' instead
-alias tag='git tag'
-alias newtag='git tag -a'
+# alias addup='git add -u'
+# alias addall='git add .'
+# alias branch='git branch'
+# alias checkout='git checkout'
+# alias clone='git clone'
+# alias commit='git commit -m'
+# alias fetch='git fetch'
+# alias pull='git pull origin'
+# alias push='git push origin'
+# alias stat='git status'  # 'status' is protected name so using 'stat' instead
+# alias tag='git tag'
+# alias newtag='git tag -a'
+alias gs='git status'
+alias gpsh='git push'
+alias gpull='git pull'
+alias gco='git commit'
+alias gck='git checkout'
+alias gcl='git clone'
+alias gb='git branch'
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
