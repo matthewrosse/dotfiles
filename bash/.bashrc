@@ -4,18 +4,6 @@ export ALTERNATE_EDITOR=""                        # setting for emacsclient
 export EDITOR="nvim"              # $EDITOR use Emacs in terminal
 export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
 
-### SET MANPAGER
-### Uncomment only one of these!
-
-### "bat" as manpager
-#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-### "vim" as manpager
-# export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
-
-### "nvim" as manpager
-# export MANPAGER="nvim -c 'set ft=man' -"
-
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
 # set -o vi
@@ -24,10 +12,6 @@ export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-### PROMPT
-# This is commented out if using starship prompt
-# PS1='[\u@\h \W]\$ '
 
 ### PATH
 if [ -d "$HOME/.bin" ] ;
@@ -156,10 +140,7 @@ alias rm='rm -i'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
 #alias vifm='./.config/vifm/scripts/vifmrun'
-#alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
-#alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
 
 ## get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4'
@@ -171,27 +152,6 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
 # Merge Xresources
 alias merge='xrdb -merge ~/.Xresources'
-
-# git
-# alias addup='git add -u'
-# alias addall='git add .'
-# alias branch='git branch'
-# alias checkout='git checkout'
-# alias clone='git clone'
-# alias commit='git commit -m'
-# alias fetch='git fetch'
-# alias pull='git pull origin'
-# alias push='git push origin'
-# alias stat='git status'  # 'status' is protected name so using 'stat' instead
-# alias tag='git tag'
-# alias newtag='git tag -a'
-alias gs='git status'
-alias gpsh='git push'
-alias gpull='git pull'
-alias gco='git commit'
-alias gck='git checkout'
-alias gcl='git clone'
-alias gb='git branch'
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -214,40 +174,11 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # switch between shells
-# I do not recommend switching default SHELL from bash.
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
-# bare git repo alias for dotfiles
-#alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-
-# termbin
-alias tb="nc termbin.com 9999"
-
-# the terminal rickroll
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-
 alias nvcfg="cd $HOME/.config/nvim/"
-
-# Unlock LBRY tips
-#alias tips='lbrynet txo spend --type=support --is_not_my_input --blocking'
-
-# Thinkorswim
-#alias tos="~/thinkorswim/thinkorswim"
-
-# force all kakoune windows into one session
-#alias kak="/usr/bin/kak -c mysession"
-#alias kaks="/usr/bin/kak -s mysession"
-#alias kakd="/usr/bin/kak -d -s mysession &"
-
-### RANDOM COLOR SCRIPT ###
-# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
-# Or install it from the Arch User Repository: shell-color-scripts
-#colorscript random
-
-### SOURCING BROOT ###
-#source ~/.config/broot/launcher/bash/br
 
 ### BASH INSULTER ###
 if [ -f /etc/bash.command-not-found ]; then
