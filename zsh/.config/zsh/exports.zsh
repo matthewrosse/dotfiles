@@ -1,8 +1,7 @@
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-
-export GOPATH=$HOME/dev/go
+export GOPATH=$HOME/.local/share/go
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
