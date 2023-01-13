@@ -134,3 +134,19 @@ lspconfig["vuels"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+
+lspconfig["solargraph"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		solargraph = {
+			autoformat = true,
+			formatting = true,
+			diagnostics = true,
+			completion = true,
+			folding = false,
+			-- commandPath = "/home/matthewrosse/.rbenv/shims/solargraph",
+		},
+	},
+	-- filetypes = { "ruby" },
+})
