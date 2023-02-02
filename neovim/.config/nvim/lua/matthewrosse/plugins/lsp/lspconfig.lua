@@ -145,12 +145,5 @@ lspconfig["solargraph"].setup({
 			-- commandPath = "/home/matthewrosse/.rbenv/shims/solargraph",
 		},
 	},
-	flags = {
-		debounce_text_changes = 150,
-	},
-	-- init_options = {
-	-- 	formatting = true,
-	-- 	autoformat = true,
-	-- },
-	-- filetypes = { "ruby" },
+	filetypes = { "ruby", "eruby" },
 })

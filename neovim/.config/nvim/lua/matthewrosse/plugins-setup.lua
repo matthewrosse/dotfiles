@@ -78,7 +78,11 @@ return require("packer").startup(function(use)
 
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-	use("glepnir/dashboard-nvim")
+	-- use({
+	-- 	"glepnir/dashboard-nvim",
+	-- 	event = "VimEnter",
+	-- 	require = { { "nvim-tree/nvim-web-devicons" } },
+	-- })
 
 	use("folke/zen-mode.nvim")
 
