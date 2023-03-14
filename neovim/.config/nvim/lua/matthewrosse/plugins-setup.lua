@@ -78,11 +78,41 @@ return require("packer").startup(function(use)
 
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-	-- use({
-	-- 	"glepnir/dashboard-nvim",
-	-- 	event = "VimEnter",
-	-- 	require = { { "nvim-tree/nvim-web-devicons" } },
-	-- })
+	use({
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				-- config
+				theme = "hyper",
+				config = {
+					week_header = {
+						enable = true,
+					},
+					shortcut = {
+						{ desc = " Update", group = "@property", action = "PackerSync", key = "u" },
+						{
+							icon = " ",
+							icon_hl = "@variable",
+							desc = "Files",
+							group = "Label",
+							action = "Telescope find_files",
+							key = "f",
+						},
+						{
+							icon = "📁 ",
+							icon_hl = "@variable",
+							desc = "File browser",
+							group = "Label",
+							action = "Telescope file_browser",
+							key = "b",
+						},
+					},
+				},
+			})
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
 
 	use("folke/zen-mode.nvim")
 
