@@ -1,0 +1,10 @@
+include $HOME/.config/sway/theme.conf
+include $HOME/.config/sway/variables.conf
+include $HOME/.config/sway/output.conf
+include $HOME/.config/sway/input.conf
+include $HOME/.config/sway/keybinds.conf
+include $HOME/.config/sway/status-bar.conf
+include $HOME/.config/sway/workspaces.conf
+include $HOME/.config/sway/rules.conf
+
+include /etc/sway/config.d/*
