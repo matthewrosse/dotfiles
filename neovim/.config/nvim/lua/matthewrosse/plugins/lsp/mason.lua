@@ -32,7 +32,9 @@ mason_lspconfig.setup({
 		"rust_analyzer",
 		"clangd",
 		"gopls",
+		"ocamllsp",
 		"vuels",
+		"prismals",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -45,6 +47,8 @@ mason_null_ls.setup({
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 		"black",
+		"ocamlformat",
+		"gofumpt",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

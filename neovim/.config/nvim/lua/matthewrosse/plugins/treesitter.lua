@@ -11,7 +11,7 @@ treesitter.setup({
 		enable = true,
 	},
 	-- enable indentation
-	indent = { enable = true, disable = { "python" } },
+	indent = { enable = true, disable = { "python", "ocaml" } },
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
 	autotag = { enable = true },
 	-- ensure these language parsers are installed
@@ -24,7 +24,7 @@ treesitter.setup({
 		"html",
 		"css",
 		"markdown",
-    "markdown_inline",
+		"markdown_inline",
 		"svelte",
 		"graphql",
 		"bash",
@@ -34,6 +34,9 @@ treesitter.setup({
 		"gitignore",
 		"python",
 		"rust",
+		"ocaml",
+		"ruby",
+		"prisma",
 	},
 	-- auto install above language parsers
 	auto_install = true,

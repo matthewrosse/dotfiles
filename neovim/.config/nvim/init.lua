@@ -17,3 +17,11 @@ require("matthewrosse.plugins.autopairs")
 require("matthewrosse.plugins.dashboard-nvim")
 require("matthewrosse.plugins.harpoon")
 require("matthewrosse.plugins.zenmode")
+require("matthewrosse.plugins.tokyonight")
+
+local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
+
+if not status then
+	print("Colorscheme not found.")
+	return
+end

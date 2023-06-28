@@ -11,13 +11,15 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarket guifg=#3FC5FF ]])
 
 nvimtree.setup({
-  view = {
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
-  },
+  -- this causes error
+  -- view = {
+  --   mappings = {
+  --     list = {
+  --       { key = "u", action = "dir_up" },
+  --     },
+  --   },
+  -- },
+  sort_by = "case_sensitive",
   renderer = {
     group_empty = true,
   },

@@ -55,3 +55,6 @@ plug "$HOME/.config/zsh/utils.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
 #eval "$(rbenv init - zsh)"
+
+# opam configuration
+[[ ! -r /home/matthewrosse/.opam/opam-init/init.zsh ]] || source /home/matthewrosse/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

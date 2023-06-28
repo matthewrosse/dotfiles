@@ -15,6 +15,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("catppuccin/nvim")
+	use("tpope/vim-fugitive")
+	use("folke/tokyonight.nvim")
 	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer") -- maximizes and restores current window
 	use("tpope/vim-surround")
@@ -25,6 +27,7 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 
 	use("nvim-lualine/lualine.nvim")
+	use("nvim-treesitter/nvim-treesitter-context")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("nvim-telescope/telescope-file-browser.nvim")
@@ -83,32 +86,32 @@ return require("packer").startup(function(use)
 		event = "VimEnter",
 		config = function()
 			require("dashboard").setup({
-				-- config
+				-- 		-- config
 				theme = "hyper",
-				config = {
-					week_header = {
-						enable = true,
-					},
-					shortcut = {
-						{ desc = " Update", group = "@property", action = "PackerSync", key = "u" },
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-						{
-							icon = "📁 ",
-							icon_hl = "@variable",
-							desc = "File browser",
-							group = "Label",
-							action = "Telescope file_browser",
-							key = "b",
-						},
-					},
-				},
+				-- 		config = {
+				-- 			week_header = {
+				-- 				enable = true,
+				-- 			},
+				-- 			shortcut = {
+				-- 				{ desc = " Update", group = "@property", action = "PackerSync", key = "u" },
+				-- 				{
+				-- 					icon = " ",
+				-- 					icon_hl = "@variable",
+				-- 					desc = "Files",
+				-- 					group = "Label",
+				-- 					action = "Telescope find_files",
+				-- 					key = "f",
+				-- 				},
+				-- 				{
+				-- 					icon = "📁 ",
+				-- 					icon_hl = "@variable",
+				-- 					desc = "File browser",
+				-- 					group = "Label",
+				-- 					action = "Telescope file_browser",
+				-- 					key = "b",
+				-- 				},
+				-- 			},
+				-- 		},
 			})
 		end,
 		requires = { "nvim-tree/nvim-web-devicons" },
