@@ -45,7 +45,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-plug "zsh-users/zsh-autosuggestions"
+#plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 
@@ -53,8 +53,8 @@ plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/options.zsh"
 plug "$HOME/.config/zsh/utils.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
+# eval "$(~/.rbenv/bin/rbenv init - zsh)"
 #eval "$(rbenv init - zsh)"
 
 # opam configuration
-[[ ! -r /home/matthewrosse/.opam/opam-init/init.zsh ]] || source /home/matthewrosse/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# [[ ! -r /home/matthewrosse/.opam/opam-init/init.zsh ]] || source /home/matthewrosse/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

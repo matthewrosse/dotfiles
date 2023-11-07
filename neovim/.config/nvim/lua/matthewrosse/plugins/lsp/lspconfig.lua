@@ -128,35 +128,40 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["gopls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["gopls"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 lspconfig["vuels"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
-lspconfig["solargraph"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		solargraph = {
-			autoformat = true,
-			formatting = true,
-			-- commandPath = "/home/matthewrosse/.rbenv/shims/solargraph",
-		},
-	},
-	filetypes = { "ruby", "eruby" },
-})
+-- lspconfig["solargraph"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = {
+-- 		solargraph = {
+-- 			autoformat = true,
+-- 			formatting = true,
+-- 			-- commandPath = "/home/matthewrosse/.rbenv/shims/solargraph",
+-- 		},
+-- 	},
+-- 	filetypes = { "ruby", "eruby" },
+-- })
 
-lspconfig["ocamllsp"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["ocamllsp"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 lspconfig["prismals"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig["astro"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -164,3 +169,4 @@ lspconfig["prismals"].setup({
 vim.diagnostic.config({
     virtual_text = true
 })
+

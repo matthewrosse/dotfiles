@@ -31,8 +31,9 @@ mason_lspconfig.setup({
 		"pyright",
 		"rust_analyzer",
 		"clangd",
-		"gopls",
-		"ocamllsp",
+    "astro",
+		-- "gopls",
+		-- "ocamllsp",
 		"vuels",
 		"prismals",
 	},
@@ -47,8 +48,8 @@ mason_null_ls.setup({
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 		"black",
-		"ocamlformat",
-		"gofumpt",
+		-- "ocamlformat",
+		-- "gofumpt",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
