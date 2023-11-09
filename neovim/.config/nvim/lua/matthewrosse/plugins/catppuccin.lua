@@ -1,5 +1,0 @@
---require('catppuccin').setup({
- -- integrations = {
-  --  lualine.nvim = true
-  --}
---})

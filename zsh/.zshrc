@@ -45,7 +45,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-#plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 

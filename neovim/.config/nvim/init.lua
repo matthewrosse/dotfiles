@@ -1,25 +1,9 @@
-require("matthewrosse.plugins-setup")
-require("matthewrosse.core.options")
-require("matthewrosse.core.keymaps")
-require("matthewrosse.core.colorscheme")
-require("matthewrosse.plugins.comment")
-require("matthewrosse.plugins.nvim-tree")
-require("matthewrosse.plugins.lualine")
-require("matthewrosse.plugins.telescope")
-require("matthewrosse.plugins.nvim-cmp")
-require("matthewrosse.plugins.lsp.mason")
-require("matthewrosse.plugins.lsp.lspsaga")
-require("matthewrosse.plugins.lsp.lspconfig")
-require("matthewrosse.plugins.lsp.null-ls")
-require("matthewrosse.plugins.treesitter")
-require("matthewrosse.plugins.gitsigns")
-require("matthewrosse.plugins.autopairs")
-require("matthewrosse.plugins.dashboard-nvim")
-require("matthewrosse.plugins.harpoon")
-require("matthewrosse.plugins.zenmode")
-require("matthewrosse.plugins.tokyonight")
+require("matthewrosse.core")
+require("matthewrosse.lazy")
 
-local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
+local colorscheme = "catppuccin"
+
+local status, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
 if not status then
 	print("Colorscheme not found.")
