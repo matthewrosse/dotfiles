@@ -30,8 +30,7 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-# dev
-alias rebuild_sentakki="docker compose down --volumes && docker compose up -d --build && sleep 5 && docker exec -it sentakki-api /bin/bash -c 'rails db:migrate db:seed' && docker logs --follow sentakki-api"
-
 alias f='fzf-tmux'
 alias pn='pnpm'
+alias python='python3'
+alias pip='pip3'
