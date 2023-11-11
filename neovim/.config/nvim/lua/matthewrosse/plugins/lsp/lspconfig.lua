@@ -57,6 +57,13 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			-- typescript specific keymaps (e.g. rename file and update imports)
+			if client.name == "tsserver" then
+				keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
+				keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
+				keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+			end
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -84,6 +91,12 @@ return {
 
 		-- configure css server
 		lspconfig["cssls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure gopls server
+		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
@@ -149,6 +162,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure dockerls server
+		lspconfig["dockerls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
@@ -168,6 +187,10 @@ return {
 					},
 				},
 			},
+		})
+
+		vim.diagnostic.config({
+			virtual_text = true,
 		})
 	end,
 }

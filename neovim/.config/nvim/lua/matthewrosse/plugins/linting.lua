@@ -1,7 +1,7 @@
 return {
 	"mfussenegger/nvim-lint",
-	--lazy = true,
-	--event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
 
@@ -19,7 +19,9 @@ return {
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			group = lint_augroup,
 			callback = function()
-				lint.try_lint()
+				lint.try_lint(nil, {
+					ignore_errors = true,
+				})
 			end,
 		})
 

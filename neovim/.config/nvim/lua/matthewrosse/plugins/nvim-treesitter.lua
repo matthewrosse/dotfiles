@@ -17,7 +17,7 @@ return {
 					enable = true,
 				},
 				-- enable indentation
-				indent = { enable = true },
+				indent = { enable = true, disable = { "python", "ocaml" } },
 				-- enable autotagging (w/ nvim-ts-autotag plugin)
 				autotag = {
 					enable = true,
@@ -25,23 +25,22 @@ return {
 				-- ensure these language parsers are installed
 				ensure_installed = {
 					"json",
+					"yaml",
 					"javascript",
 					"typescript",
 					"tsx",
-					"yaml",
 					"html",
 					"css",
 					"prisma",
 					"markdown",
 					"markdown_inline",
-					"svelte",
-					"graphql",
 					"bash",
 					"lua",
 					"vim",
 					"dockerfile",
 					"gitignore",
 					"query",
+					"sql",
 				},
 				incremental_selection = {
 					enable = true,
