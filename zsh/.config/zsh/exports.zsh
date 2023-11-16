@@ -15,3 +15,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
