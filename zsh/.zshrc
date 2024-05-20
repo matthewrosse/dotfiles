@@ -53,8 +53,18 @@ plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/options.zsh"
 plug "$HOME/.config/zsh/utils.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
-# eval "$(~/.rbenv/bin/rbenv init - zsh)"
-#eval "$(rbenv init - zsh)"
 
-# opam configuration
-# [[ ! -r /home/matthewrosse/.opam/opam-init/init.zsh ]] || source /home/matthewrosse/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+eval "$(rbenv init - zsh)"
+
+# bun completions
+[ -s "/Users/matthewrosse/.bun/_bun" ] && source "/Users/matthewrosse/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+[[ ! -r /Users/matthewrosse/.opam/opam-init/init.zsh ]] || source /Users/matthewrosse/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

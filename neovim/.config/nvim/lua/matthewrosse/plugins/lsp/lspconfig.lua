@@ -168,6 +168,68 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure omnisharp server
+		lspconfig["omnisharp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["rust_analyzer"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["asm_lsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["astro"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["ocamlls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "/Users/matthewrosse/.local/share/nvim/mason/bin/ocamllsp" },
+		})
+
+		lspconfig["zls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- lspconfig["solargraph"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	cmd = { os.getenv("HOME") .. "/.rbenv/shims/solargraph", "stdio" },
+		-- 	root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+		-- 	settings = {
+		-- 		solargraph = {
+		-- 			autoformat = true,
+		-- 			completion = true,
+		-- 			diagnostic = true,
+		-- 			folding = true,
+		-- 			references = true,
+		-- 			rename = true,
+		-- 			symbols = true,
+		-- 		},
+		-- 	},
+		-- })
+
+		lspconfig["ruby_lsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { os.getenv("HOME") .. "/.rbenv/shims/ruby-lsp" },
+		})
+
+		lspconfig["elixirls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "elixir-ls" },
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,

@@ -21,7 +21,7 @@ return {
 					package_pending = "➜",
 					package_uninstalled = "✗",
 				},
-        border = 'rounded'
+				border = "rounded",
 			},
 		})
 
@@ -38,6 +38,13 @@ return {
 				"bashls",
 				"clangd",
 				"jsonls",
+				--"gopls",
+				"rust_analyzer",
+				"asm_lsp",
+				"astro",
+				"ocamllsp",
+				"zls",
+				"elixirls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -53,8 +60,10 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
-				"pylint", -- python linter
+				--"pylint", -- python linter
 				"eslint",
+				--"gofumpt",
+				"ocamlformat",
 			},
 		})
 	end,

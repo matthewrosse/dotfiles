@@ -1,3 +1,4 @@
+vim.g.skip_ts_context_commentstring_module = true
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -21,6 +22,9 @@ return {
 				-- enable autotagging (w/ nvim-ts-autotag plugin)
 				autotag = {
 					enable = true,
+					enable_rename = true,
+					enable_close = true,
+					enable_close_on_slash = false,
 				},
 				-- ensure these language parsers are installed
 				ensure_installed = {
@@ -31,7 +35,6 @@ return {
 					"tsx",
 					"html",
 					"css",
-					"prisma",
 					"markdown",
 					"markdown_inline",
 					"bash",
@@ -41,6 +44,22 @@ return {
 					"gitignore",
 					"query",
 					"sql",
+					"go",
+					"astro",
+					"ocaml",
+					"make",
+					"c",
+					"cpp",
+					"csv",
+					"rust",
+					"templ",
+					"toml",
+					"xml",
+					"zig",
+					"pkl",
+					"ruby",
+					"elixir",
+					"python",
 				},
 				incremental_selection = {
 					enable = true,
@@ -50,11 +69,6 @@ return {
 						scope_incremental = false,
 						node_decremental = "<bs>",
 					},
-				},
-				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				context_commentstring = {
-					enable = true,
-					enable_autocmd = false,
 				},
 			})
 		end,
