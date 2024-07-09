@@ -9,7 +9,7 @@ export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/opam:$PATH"
 
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$(go env GOPATH)/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/Users/matthewrosse/Library/pnpm"

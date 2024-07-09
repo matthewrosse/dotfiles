@@ -35,3 +35,5 @@ alias pn='pnpm'
 alias python='python3'
 alias pip='pip3'
 alias lg='lazygit'
+
+alias dev-update='brew update && brew upgrade && rustup update && bun upgrade && npm update -g && asdf update && asdf plugin update --all && gem update --system && gem update'
