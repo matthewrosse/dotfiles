@@ -4,13 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
-		{
-			"L3MON4D3/LuaSnip",
-			-- follow latest release.
-			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-			-- install jsregexp (optional!).
-			build = "make install_jsregexp",
-		},
+		"L3MON4D3/LuaSnip", -- snippet engine
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
@@ -50,7 +44,6 @@ return {
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
-
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
 				format = lspkind.cmp_format({
@@ -59,12 +52,5 @@ return {
 				}),
 			},
 		})
-
-        -- This fucks up many autocompletion plugins
-
-		-- If you want insert `(` after select function or method item
-		-- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-		--
-		-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }

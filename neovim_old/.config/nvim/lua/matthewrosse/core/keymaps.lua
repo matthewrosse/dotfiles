@@ -9,11 +9,9 @@ keymap.set("i", "jk", "<ESC>")
 -- source current open buffer
 keymap.set("n", "<leader>vs", ":source % <CR>")
 
--- moving lines in visual mode
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- centering the screen after some actions
 keymap.set("n", "J", "mzJ`z")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
@@ -25,10 +23,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- 2nd greatest remap ever -> stolen from the primeagen
+-- greatest remap ever -> stolen from the primeagen
 keymap.set("x", "<leader>p", [["_dP]])
 
--- 3rd greatest remap ever : asbjornHaland
+-- next greatest remap ever : asbjornHaland
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
@@ -42,9 +40,7 @@ keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- what the fuck is that, i don't even remember..
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Split windows

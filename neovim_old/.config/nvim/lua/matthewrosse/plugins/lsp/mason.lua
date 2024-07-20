@@ -21,34 +21,37 @@ return {
 					package_pending = "➜",
 					package_uninstalled = "✗",
 				},
+				border = "rounded",
 			},
 		})
 
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"bashls",
-				"clangd",
 				"tsserver",
 				"html",
 				"cssls",
-				"css_variables",
-				"dockerls",
-				"docker_compose_language_service",
-				"emmet_ls",
-				"gopls",
-				"jsonls",
-				"lua_ls",
-				"autotools_ls",
-				"rust_analyzer",
-				"sqlls",
-				"templ",
-				"vuels",
-				"yamlls",
 				"tailwindcss",
+				"lua_ls",
+				"emmet_ls",
+				"pyright",
+				"bashls",
+				"clangd",
+				"jsonls",
+				--"gopls",
+				"rust_analyzer",
+				"asm_lsp",
+				"astro",
 				"ocamllsp",
-				"csharp_ls",
+				"zls",
+				"elixirls",
 			},
+			-- auto-install configured servers (with lspconfig)
+			automatic_installation = true, -- not the same as ensure_installed
+			auto_update = true,
+			run_on_start = true,
+			start_delay = 3000, -- 3 second delay
+			debounce_hours = 5, -- at least 5 hours between attempts to install/update
 		})
 
 		mason_tool_installer.setup({
@@ -57,10 +60,10 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
-				"pylint",
+				--"pylint", -- python linter
 				"eslint",
+				--"gofumpt",
 				"ocamlformat",
-				"csharpier",
 			},
 		})
 	end,
